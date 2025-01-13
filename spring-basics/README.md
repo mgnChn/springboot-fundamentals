@@ -1,0 +1,10 @@
+- Autowiring
+  - Bean tags
+  - autowire="" tag (byType, byName)
+  - primary="true" tag
+- Dependency Injection
+  - Constructor Injection (constructor-arg tag)
+  - Setter Injection (property tag)
+  - Field Injection
+  - primitive variable injection (value="") and object reference injection (ref="")
+- Spring container (IoC container)
