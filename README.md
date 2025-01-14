@@ -1,2 +1,3 @@
 # springboot-fundamentals
-Each folder contains demo projects for Springboot (One focused on annotations, one focused on MVC), Spring
+- spring-basics and springboot-basics focus on annotations/dependency injection
+- springboot-rest-demo focuses on MVC structure
