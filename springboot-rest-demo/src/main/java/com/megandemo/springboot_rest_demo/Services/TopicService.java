@@ -15,11 +15,11 @@ public class TopicService {
     @Autowired
     private TopicRepository topicRepository;
 
-    private List<Topic> topics = new ArrayList<>(Arrays.asList(
-            new Topic("spring", "Spring Framework", "Spring Framework Description"),
-            new Topic("java", "Core Java", "Core Java Description"),
-            new Topic("javascript", "JavaScript", "JavaScript Description")
-    ));
+//    private List<Topic> topics = new ArrayList<>(Arrays.asList(
+//            new Topic("spring", "Spring Framework", "Spring Framework Description"),
+//            new Topic("java", "Core Java", "Core Java Description"),
+//            new Topic("javascript", "JavaScript", "JavaScript Description")
+//    ));
 
     public List<Topic> getTopics() {
 
@@ -34,7 +34,7 @@ public class TopicService {
     }
 
     public Topic getTopic(String id){
-        return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().orElse(null);
+        return getTopics().stream().filter(topic -> topic.getId().equals(id)).findFirst().orElse(null);
     }
 
     public void addTopic(Topic topic){
@@ -45,16 +45,16 @@ public class TopicService {
 //        topics.add(topicModel);
     }
 
-    public void updateTopic(String topicId, Topic topicModel){
-        for(int i = 0; i < topics.size(); ++i){
-            if(topics.get(i).getId().equals(topicId)){
-                topics.set(i, topicModel);
-                return;
-            }
-        }
-    }
-
-    public void deleteTopic(String topicId){
-        topics.removeIf(topic -> topic.getId().equals(topicId));
-    }
+//    public void updateTopic(String topicId, Topic topicModel){
+//        for(int i = 0; i < topics.size(); ++i){
+//            if(topics.get(i).getId().equals(topicId)){
+//                topics.set(i, topicModel);
+//                return;
+//            }
+//        }
+//    }
+//
+//    public void deleteTopic(String topicId){
+//        topics.removeIf(topic -> topic.getId().equals(topicId));
+//    }
 }

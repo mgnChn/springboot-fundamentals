@@ -36,13 +36,13 @@ public class TopicController {
         topicService.addTopic(topicModel);
     }
 
-    @PutMapping("/topics/{topicId}")
-    public void updateTopic(@PathVariable("topicId") String topicId, @RequestBody Topic topicModel){
-        topicService.updateTopic(topicId, topicModel);
-    }
-
-    @DeleteMapping("/topics/{topicId}")
-    public void deleteTopic(@PathVariable("topicId") String topicId){
-        topicService.deleteTopic(topicId);
-    }
+//    @PutMapping("/topics/{topicId}")
+//    public void updateTopic(@PathVariable("topicId") String topicId, @RequestBody Topic topicModel){
+//        topicService.updateTopic(topicId, topicModel);
+//    }
+//
+//    @DeleteMapping("/topics/{topicId}")
+//    public void deleteTopic(@PathVariable("topicId") String topicId){
+//        topicService.deleteTopic(topicId);
+//    }
 }
