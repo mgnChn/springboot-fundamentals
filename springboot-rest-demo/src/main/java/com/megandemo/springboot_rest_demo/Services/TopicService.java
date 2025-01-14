@@ -1,6 +1,8 @@
 package com.megandemo.springboot_rest_demo.Services;
 
-import com.megandemo.springboot_rest_demo.Models.TopicModel;
+import com.megandemo.springboot_rest_demo.Models.Topic;
+import com.megandemo.springboot_rest_demo.Repositories.TopicRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,25 +12,40 @@ import java.util.List;
 @Service
 public class TopicService {
 
-    private List<TopicModel> topics = new ArrayList<>(Arrays.asList(
-            new TopicModel("spring", "Spring Framework", "Spring Framework Description"),
-            new TopicModel("java", "Core Java", "Core Java Description"),
-            new TopicModel("javascript", "JavaScript", "JavaScript Description")
+    @Autowired
+    private TopicRepository topicRepository;
+
+    private List<Topic> topics = new ArrayList<>(Arrays.asList(
+            new Topic("spring", "Spring Framework", "Spring Framework Description"),
+            new Topic("java", "Core Java", "Core Java Description"),
+            new Topic("javascript", "JavaScript", "JavaScript Description")
     ));
 
-    public List<TopicModel> getTopics() {
+    public List<Topic> getTopics() {
+
+        List<Topic> topics = new ArrayList<>();
+        topicRepository.findAll()
+                .forEach(topics::add);
+
         return topics;
+
+//        Hard-coded list version
+//        return topics;
     }
 
-    public TopicModel getTopic(String id){
+    public Topic getTopic(String id){
         return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().orElse(null);
     }
 
-    public void addTopic(TopicModel topicModel){
-        topics.add(topicModel);
+    public void addTopic(Topic topic){
+
+        topicRepository.save(topic);
+
+//        Hard-coded list version
+//        topics.add(topicModel);
     }
 
-    public void updateTopic(String topicId, TopicModel topicModel){
+    public void updateTopic(String topicId, Topic topicModel){
         for(int i = 0; i < topics.size(); ++i){
             if(topics.get(i).getId().equals(topicId)){
                 topics.set(i, topicModel);
