@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -45,16 +44,24 @@ public class TopicService {
 //        topics.add(topicModel);
     }
 
-//    public void updateTopic(String topicId, Topic topicModel){
+    public void updateTopic(String topicId, Topic topic){
+
+        topicRepository.save(topic);
+
+        //        Hard-coded list version
 //        for(int i = 0; i < topics.size(); ++i){
 //            if(topics.get(i).getId().equals(topicId)){
-//                topics.set(i, topicModel);
+//                topics.set(i, topic);
 //                return;
 //            }
 //        }
-//    }
-//
-//    public void deleteTopic(String topicId){
+    }
+
+    public void deleteTopic(String topicId){
+
+        topicRepository.deleteById(topicId);
+
+        //        Hard-coded list version
 //        topics.removeIf(topic -> topic.getId().equals(topicId));
-//    }
+    }
 }

@@ -1,4 +1,4 @@
-package com.megandemo.springboot_rest_demo.Controllers.Topic;
+package com.megandemo.springboot_rest_demo.Controllers;
 
 import com.megandemo.springboot_rest_demo.Services.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.megandemo.springboot_rest_demo.Models.Topic;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -36,13 +35,13 @@ public class TopicController {
         topicService.addTopic(topicModel);
     }
 
-//    @PutMapping("/topics/{topicId}")
-//    public void updateTopic(@PathVariable("topicId") String topicId, @RequestBody Topic topicModel){
-//        topicService.updateTopic(topicId, topicModel);
-//    }
-//
-//    @DeleteMapping("/topics/{topicId}")
-//    public void deleteTopic(@PathVariable("topicId") String topicId){
-//        topicService.deleteTopic(topicId);
-//    }
+    @PutMapping("/topics/{topicId}")
+    public void updateTopic(@PathVariable("topicId") String topicId, @RequestBody Topic topicModel){
+        topicService.updateTopic(topicId, topicModel);
+    }
+
+    @DeleteMapping("/topics/{topicId}")
+    public void deleteTopic(@PathVariable("topicId") String topicId){
+        topicService.deleteTopic(topicId);
+    }
 }
