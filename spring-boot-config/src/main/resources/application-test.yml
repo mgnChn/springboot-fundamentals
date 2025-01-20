@@ -1,0 +1,17 @@
+spring.application.name: spring-boot-config
+
+my:
+  greeting: Hello World from application-test.yml within src/main/resources
+  list:
+    values: One, Two, Three
+
+dbValues: "{connectionString: 'localhost:5432/mydb', username: 'user', password: 'password'}"
+
+db:
+  connection: test-connection-string-here
+  host: 127.0.0.1
+  port: 9999
+
+
+# Enable actuator dependency to expose the endpoints
+management.endpoints.web.exposure.include: "*"
