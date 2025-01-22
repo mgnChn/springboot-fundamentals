@@ -58,6 +58,12 @@
 			<artifactId>derbytools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Reactor Core Dependency for Async -->
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

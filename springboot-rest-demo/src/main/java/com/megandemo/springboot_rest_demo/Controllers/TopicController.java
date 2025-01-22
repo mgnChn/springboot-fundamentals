@@ -2,9 +2,11 @@ package com.megandemo.springboot_rest_demo.Controllers;
 
 import com.megandemo.springboot_rest_demo.Services.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import com.megandemo.springboot_rest_demo.Models.Topic;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -43,5 +45,15 @@ public class TopicController {
     @DeleteMapping("/topics/{topicId}")
     public void deleteTopic(@PathVariable("topicId") String topicId){
         topicService.deleteTopic(topicId);
+    }
+
+    @GetMapping("/topics/transformtopic")
+    public List<Topic> transformTopic(){
+        return topicService.transformTopic();
+    }
+
+    @GetMapping(value = "/topics/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Long> streamTopic() {
+        return topicService.constantHotStream();
     }
 }
