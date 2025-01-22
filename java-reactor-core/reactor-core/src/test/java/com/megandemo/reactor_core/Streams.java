@@ -127,14 +127,14 @@ public class Streams
         publish.connect();
     }
 
-    public static void main(String[] args) {
-        Streams streams = new Streams();
-//        streams.subscribeAllElements();
-//        streams.subscribeTwoElements();
-//        streams.doubleElements();
-//        streams.combineStreams();
-//        streams.convertColdHotStream();
-        streams.throttleData();
-    }
+//    public static void main(String[] args) {
+//        Streams streams = new Streams();
+////        streams.subscribeAllElements();
+////        streams.subscribeTwoElements();
+////        streams.doubleElements();
+////        streams.combineStreams();
+////        streams.convertColdHotStream();
+//        streams.throttleData();
+//    }
 
 }
