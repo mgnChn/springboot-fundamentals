@@ -1,3 +1,5 @@
 # springboot-fundamentals
-- spring-basics and springboot-basics focus on annotations/dependency injection
-- springboot-rest-demo focuses on MVC structure
+- spring-basics and springboot-basics: annotations/dependency injection
+- springboot-rest-demo: MVC structure (Controllers, Services, Repositories, etc.)
+- spring-boot-config: configurations and how to get them (@Value, config class Bean/Autowire) from properties files/profiles
+- reactor-core: Reactor Core, Flux, Publishers, Subscribers, etc.
